@@ -44,11 +44,11 @@ export default function Home() {
 
   const handleCoquiDownload = async () => {
     const coquiApiRouteXttsVersion = "https://app.coqui.ai/api/v2/samples/xtts/render/";
-    const API_KEY = "Bearer xxxxxx"
+    const API_KEY = "xxxxxx"
     try {
       const coquiAPIResponse = await fetch(coquiApiRouteXttsVersion, {
         method: "POST", headers: {
-          "Content-Type": "application/json", "Authorization": `"${API_KEY}"`,
+          "Content-Type": "application/json", "Authorization": `Bearer ${API_KEY}`,
           "Accept": "application/json"
         },
         body: `{"voice_id": "c791b5b5-0558-42b8-bb0b-602ac5efc0b9","text": "Hi there fellow citizen of ${countrySelected}!","language": "${mappingCountryLanguage(countrySelected)}"}`
